@@ -1,31 +1,44 @@
 ﻿using System;
 using System.Net.Http;
+using System.Text;
 using WebHookAdpter.Core;
 
 namespace WebHookAdpter.Client
 {
+    public class Deserialize : IDeserialize
+    {
+        public T ReadResult<T>(string input)
+        {
+            return default(T);
+        }
+    }
+
     public class Client : IClient
     {
+        public IDeserialize Deserializer { get; } = new Deserialize();
 
-        public StatusResult<T> Post<T>(string url, string data)
+        RespondResult GetRespondResult<T>(HttpResponseMessage respond)
         {
-            HttpClient Client = new HttpClient();
-            var Content =new StringContent(data);
-            var result = Client.PostAsync(new Uri(url), Content).Result;
-            if (result.StatusCode ==  System.Net.HttpStatusCode.OK) return new StatusResult<T>();
-            return new StatusResult<T>( $"{{'StatusCode':'{ result.StatusCode }','Content':'{ result.Content }'");
+            var result = respond.Content.ReadAsStringAsync().Result;
+            if (respond.StatusCode == System.Net.HttpStatusCode.OK) {
+                var content = Deserializer.ReadResult<T>(result);
+                return new RespondResult<T> {  StatusCode= System.Net.HttpStatusCode.OK.ToString(), Content= content };
+            }
+            return new RespondError(respond.StatusCode.ToString(), respond.Content.ToString());
         }
 
-
-        public StatusResult Post(string url, string data)
+        public RespondResult Post<T>(string url, string data)
         {
             HttpClient Client = new HttpClient();
-            var Content = new StringContent(data);
+            HttpContent Content = new StringContent(data, Encoding.UTF8, "application/json");
             var result = Client.PostAsync(new Uri(url), Content).Result;
-            if (result.StatusCode == System.Net.HttpStatusCode.OK) return new StatusResult();
-            return new StatusResult( $"{{'StatusCode':'{ result.StatusCode }','Content':'{ result.Content }'");
+            return GetRespondResult<T>(result);
         }
 
+        public RespondResult Post(string url, string data)
+        {
+            return Post<string>(url,data);
+        }
 
     }
 }

@@ -46,17 +46,18 @@ namespace SimpleDemo
             bulider.Append("{ \"msgtype\": \"markdown\",");
             bulider.Append("\"markdown\": {");
             bulider.Append($"\"title\":\"{title}\",");
-            bulider.AppendLine($"\"text\": \"#### {title}");
-            if (bodys != null) foreach (var line in bodys) bulider.AppendLine($">{line}");
+            bulider.Append($"\"text\": \"#### {title} \n ");
+            if (bodys != null) foreach (var line in bodys) bulider.Append($"> {line}  \n ");
             if (subs != null)
             {
                 foreach (var sub in subs)
                 {
-                    if (!string.IsNullOrEmpty(sub.Key)) bulider.AppendLine($"\"text\": \"#### {sub.Key}");
-                    if (sub.Value != null) foreach (var line in sub.Value) bulider.AppendLine($">{line}");
+                    if (!string.IsNullOrEmpty(sub.Key)) bulider.Append($"\"text\": \"#### {sub.Key} \n ");
+                    if (sub.Value != null) foreach (var line in sub.Value) bulider.Append($">{line} \n");
                 }
             }
             bulider.Append("\"}");
+            bulider.Append("}");
             return bulider.ToString();
         }
 

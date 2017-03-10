@@ -8,7 +8,7 @@ namespace Test.SimpleDemo
     public class TaskCreateUnitTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Post()
         {
             var content = new HookContent_TaskCreate
             {
@@ -18,7 +18,7 @@ namespace Test.SimpleDemo
                 TaskNo = "THBC-600170-200651",
             };
             var template = new Hook_TaskCreateTemplate(content);
-            //visual studio 2017 £¿do you  have cache the type info? why update the last now?
+            //visual studio 2017 ? do you  have cache the type info ? why update the last now ?
             template.SendMessage();
             
         }
