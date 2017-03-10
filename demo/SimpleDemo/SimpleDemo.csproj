@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\WebHookAdpter.Client\WebHookAdpter.Client.csproj" />
+    <ProjectReference Include="..\..\src\WebHookAdpter.Core\WebHookAdpter.Core.csproj" />
+    <ProjectReference Include="..\..\src\WebHookAdpter.TemplateEngine\WebHookAdpter.TemplateEngine.csproj" />
+  </ItemGroup>
+
+</Project>
