@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
 using WebHookAdpter.Core;
 
 namespace WebHookAdpter.TemplateEngine
@@ -13,5 +18,8 @@ namespace WebHookAdpter.TemplateEngine
             properties.ForEach(it => template = template.Replace(template, $"{{{it}}}"));
             return template;
         }
+
+       
     }
+
 }

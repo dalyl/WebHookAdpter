@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDemo", "demo\SimpleDe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.SimpleDemo", "test\Test.SimpleDemo\Test.SimpleDemo.csproj", "{6A2B49E6-0E2B-45B1-AA18-8A2C609912EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityApi", "demo\UnityApi\UnityApi.csproj", "{9802EABE-CF91-4F86-8217-CE89B9371EB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6A2B49E6-0E2B-45B1-AA18-8A2C609912EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A2B49E6-0E2B-45B1-AA18-8A2C609912EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A2B49E6-0E2B-45B1-AA18-8A2C609912EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9802EABE-CF91-4F86-8217-CE89B9371EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9802EABE-CF91-4F86-8217-CE89B9371EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9802EABE-CF91-4F86-8217-CE89B9371EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9802EABE-CF91-4F86-8217-CE89B9371EB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +61,6 @@ Global
 		{04AAD416-B3E2-4077-90CB-7025F43F809A} = {7788F208-3BFC-4BDA-B7E1-CF57A42113C4}
 		{50B51118-1FBC-426F-8F0C-E5C982A3623B} = {32F5820E-8301-433E-B206-2C41919AD0D7}
 		{6A2B49E6-0E2B-45B1-AA18-8A2C609912EB} = {1598E28B-699A-4225-8F93-31EECD5B22FA}
+		{9802EABE-CF91-4F86-8217-CE89B9371EB8} = {32F5820E-8301-433E-B206-2C41919AD0D7}
 	EndGlobalSection
 EndGlobal
