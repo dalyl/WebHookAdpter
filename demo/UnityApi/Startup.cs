@@ -26,17 +26,17 @@ namespace UnityApi
             loggerFactory.AddDebug();
             loggerFactory.AddConsole();
             app.UseMiddleware<RequestLoggingMiddleware>();
+            //  app.UseMiddleware<DecryptionMiddleware>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMiddleware<DecryptionMiddleware>();
-
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Hello World!");
+            });
 
 
         }

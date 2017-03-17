@@ -7,7 +7,7 @@ using System.Text;
 namespace WebHookAdpter.TemplateEngine
 {
 
-    public class FormattedValues : IReadOnlyList<KeyValuePair<string, object>>
+    internal class FormattedValues : IReadOnlyList<KeyValuePair<string, object>>
     {
         private const string NullFormat = "[null]";
         private static ConcurrentDictionary<string, ValuesFormatter> _formatters = new ConcurrentDictionary<string, ValuesFormatter>();

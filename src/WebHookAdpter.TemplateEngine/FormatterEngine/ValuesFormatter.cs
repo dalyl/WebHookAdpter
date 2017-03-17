@@ -8,7 +8,7 @@ using System.Text;
 namespace WebHookAdpter.TemplateEngine
 {
 
-    public class ValuesFormatter
+    internal class ValuesFormatter
     {
         private const string NullValue = "(null)";
         private static readonly object[] EmptyArray = new object[0];

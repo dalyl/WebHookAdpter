@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 using WebHookAdpter.Core;
+using System.Reflection;
 
 namespace WebHookAdpter.TemplateEngine
 {
@@ -24,6 +26,9 @@ namespace WebHookAdpter.TemplateEngine
 
         object[] GetValues<T>(T model)
         {
+            var properties = typeof(T).GetRuntimeProperties().ToList();
+            return properties.Select
+
             return null;
         }
     }
